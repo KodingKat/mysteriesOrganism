@@ -12,3 +12,21 @@ const mockUpStrand = () => {
   }
   return newStrand
 }
+
+const pAequorFactory = (specimenNum, dna) =>( {
+    specimenNum,
+    dna,
+    mutate() {
+        let newBase = returnRandBase();
+        let randBaseIndex = Math.floor(Math.random() * this.dna.length);
+        if (newBase === this.dna[randBaseIndex]) {
+            this.mutate();
+        } else {
+            this.dna[randBaseIndex] = newBase;
+        }
+    },
+    compareDNA() {
+        
+    }
+})
+
