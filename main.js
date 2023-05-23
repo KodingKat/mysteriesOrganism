@@ -13,6 +13,7 @@ const mockUpStrand = () => {
   return newStrand
 }
 
+// Factory function to simulate the specimen.
 const pAequorFactory = (specimenNum, dna) =>( {
     specimenNum,
     dna,
@@ -26,9 +27,16 @@ const pAequorFactory = (specimenNum, dna) =>( {
             this.dna[randBaseIndex] = newBase;
         }
     },
+    
     //Method to compare the DNA of different specimens.
-    compareDNA() {
-        
+    compareDNA(currDNA, simDNA) {
+      let simDNACount = 0;
+        for (let x=0; x<currDNA.length; x++) {
+          if (currDNA[x] === simDNA[x]) {
+            simDNACount +=1;
+          }
+        }
+        let finalSimDNA = (simDNACount/currDNA.length)*100;
+        console.log(`Specimen #1 and speciment #2 have ${finalSimDNA}% DNA in common.`)
     }
 })
-
