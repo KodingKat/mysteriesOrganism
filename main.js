@@ -16,6 +16,7 @@ const mockUpStrand = () => {
 const pAequorFactory = (specimenNum, dna) =>( {
     specimenNum,
     dna,
+    // Method to simulate the mutation of the specimen.
     mutate() {
         let newBase = returnRandBase();
         let randBaseIndex = Math.floor(Math.random() * this.dna.length);
@@ -25,6 +26,7 @@ const pAequorFactory = (specimenNum, dna) =>( {
             this.dna[randBaseIndex] = newBase;
         }
     },
+    //Method to compare the DNA of different specimens.
     compareDNA() {
         
     }
