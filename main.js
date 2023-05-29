@@ -38,5 +38,19 @@ const pAequorFactory = (specimenNum, dna) =>( {
         }
         let finalSimDNA = (simDNACount/currDNA.length)*100;
         console.log(`Specimen #1 and speciment #2 have ${finalSimDNA}% DNA in common.`)
+    },
+
+    // Method to test if specimen would survive, 60%+ 'C' or 'G'.
+    willLikelySurvive() {
+      let surviveCount = 0;
+      for (let x=0; x>this.dna.length; x++) {
+        if (this.dna[x]==='C' || this.dna[x]==='G') {
+          surviveCount++;
+        }
+      }
+      if (surviveCount/this.dna.length >= 0.6) {
+        return true;
+      }
     }
 })
+
